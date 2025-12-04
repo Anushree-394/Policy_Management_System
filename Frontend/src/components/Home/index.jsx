@@ -73,6 +73,27 @@ const Home = () => {
             <span className="bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm">
               Quick, easy & hassle free
             </span>
+    <div className="home-container">
+      <main className="main-content">
+        <div className="hero">
+          <div className="hero-content">
+            <h1>Let's find you the Best Insurance</h1>
+            <div className="tags">
+              <span>51+ insurers offering lowest prices</span>
+              <span>Quick, easy & hassle free</span>
+            </div>
+            <div className="hero-image">
+              <img src={imageUrls.heroImage} alt="Family protected by insurance" />
+            </div>
+          </div>
+          
+          <div className="promo-banner">
+            <div className="promo-content">
+              <h3>Best time to buy Health Insurance is now</h3>
+              <p>Additional discount up to 25%*</p>
+              <p>0%^ GST on health insurance plans</p>
+              <button className="btn-secondary">View plans</button>
+            </div>
           </div>
 
           <img

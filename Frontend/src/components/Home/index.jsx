@@ -75,23 +75,6 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      {/* Header */}
-      <header className="header">
-        <div className="logo">SecurePolicy</div>
-        <nav className="nav-links">
-          <a href="#products">Insurance Products</a>
-          <a href="#renew">Renew Your Policy</a>
-          <a href="#claim">Claim</a>
-          <a href="#about">About Us</a>
-          <a href="#support">Support</a>
-        </nav>
-        <div className="header-actions">
-          <button className="btn-outline">Talk to Expert</button>
-          <button className="btn-primary">Sign in</button>
-        </div>
-      </header>
-
-      {/* Hero Section */}
       <main className="main-content">
         <div className="hero">
           <div className="hero-content">

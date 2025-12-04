@@ -1,16 +1,151 @@
-# React + Vite
+# Policy Management System - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🎯 Project Status
 
-Currently, two official plugins are available:
+**Frontend Lead & Integrator Setup - COMPLETE ✅**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This React application has been fully architected with:
+- ✅ Redux Toolkit for state management
+- ✅ Axios with JWT interceptors for API calls
+- ✅ React Router with role-based route protection
+- ✅ Complete folder structure for team collaboration
+- ✅ Integration ready for backend API at `http://localhost:5000/api`
 
-## React Compiler
+## 🚀 Quick Start
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Install dependencies (already done)
+npm install
 
-## Expanding the ESLint configuration
+# Start development server
+npm run dev
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Build for production
+npm run build
+```
+
+## 📁 Project Structure
+
+```
+Frontend/
+├── src/
+│   ├── components/          # React components
+│   │   ├── Home/           # Existing home component
+│   │   ├── Layout/         # Main layout wrapper
+│   │   └── ExampleUsage.jsx # Usage examples
+│   ├── services/           # API service layer
+│   │   ├── api.js          # Axios instance with interceptors
+│   │   ├── authService.js  # Auth API calls
+│   │   └── policyService.js # Policy API calls
+│   ├── store/              # Redux store
+│   │   ├── store.js        # Store configuration
+│   │   └── slices/         # Redux slices
+│   │       ├── authSlice.js    # Authentication state
+│   │       └── policySlice.js  # Policy state
+│   ├── routes/             # Routing
+│   │   ├── AppRoutes.jsx       # Route definitions
+│   │   └── ProtectedRoute.jsx  # Route protection
+│   ├── hooks/              # Custom hooks
+│   │   └── redux.js        # Typed Redux hooks
+│   ├── utils/              # Utilities
+│   │   └── roles.js        # Role checking
+│   ├── constants/          # Constants
+│   │   └── api.js          # API endpoints
+│   ├── App.jsx             # Main app component
+│   └── main.jsx            # Entry point
+├── ARCHITECTURE.md         # Detailed architecture docs
+├── SETUP_GUIDE.md          # Setup and usage guide
+└── package.json
+```
+
+## 🔑 Key Features
+
+### 1. State Management (Redux)
+- **Auth Slice**: User authentication, login, logout, token management
+- **Policy Slice**: Policy CRUD operations, filtering, pagination
+
+### 2. API Integration
+- Axios instance configured with base URL: `http://localhost:5000/api`
+- Automatic JWT token injection via request interceptor
+- Automatic token refresh on 401 errors
+- Error handling and redirects
+
+### 3. Routing & Protection
+- Public routes: `/`, `/login`, `/register`
+- Protected routes: `/dashboard`, `/policies/*`
+- Role-based routes: Admin/Manager only routes
+- Automatic redirects for unauthorized access
+
+### 4. Role-Based Access Control
+- Roles: `ADMIN`, `MANAGER`, `USER`, `VIEWER`
+- Utility functions: `hasRole()`, `isAdmin()`, `isManagerOrAdmin()`
+- Route-level and component-level protection
+
+## 📚 Documentation
+
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Complete architecture documentation
+- **[SETUP_GUIDE.md](./SETUP_GUIDE.md)** - Setup instructions and common tasks
+- **[ExampleUsage.jsx](./src/components/ExampleUsage.jsx)** - Code examples
+
+## 🛠️ Dependencies
+
+- `react` ^19.2.0
+- `react-dom` ^19.2.0
+- `@reduxjs/toolkit` - State management
+- `react-redux` - React bindings
+- `react-router-dom` - Routing
+- `axios` - HTTP client
+
+## 👥 Team Collaboration
+
+### For Member 4 (UI Component Builder)
+- Build reusable UI components
+- Create Login/Register pages
+- Design navigation and layout components
+- Reference: `src/components/ExampleUsage.jsx` for patterns
+
+### For Member 5 (Page Builder)
+- Build Dashboard page
+- Create Policy pages (list, detail, create, edit)
+- Build Admin panel
+- Reference: `src/routes/AppRoutes.jsx` for route structure
+
+## 🔌 Backend Integration
+
+The frontend is configured to connect to:
+- **Base URL**: `http://localhost:5000/api`
+
+Expected endpoints:
+- `/api/auth/*` - Authentication endpoints
+- `/api/policies/*` - Policy endpoints
+
+See `ARCHITECTURE.md` for detailed API specifications.
+
+## ✅ What's Ready
+
+- ✅ Redux store with Auth and Policy slices
+- ✅ API service layer with interceptors
+- ✅ Route protection system
+- ✅ Role-based access control
+- ✅ Folder structure for team members
+- ✅ Example usage components
+- ✅ Complete documentation
+
+## 🚧 What's Next
+
+- [ ] Member 4: Build UI components and auth pages
+- [ ] Member 5: Build page components
+- [ ] Integration testing with backend
+- [ ] Styling and UI polish
+
+## 📝 Notes
+
+- All API calls automatically include JWT tokens
+- Tokens are stored in localStorage
+- Failed auth automatically redirects to login
+- All routes are defined but most pages are placeholders
+
+---
+
+**Setup by Member 3 (Frontend Lead & Integrator)**  
+Ready for Members 4 & 5 to build UI components and pages!

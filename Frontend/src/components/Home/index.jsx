@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 // Placeholder image URLs
@@ -15,6 +16,13 @@ const imageUrls = {
 
 const Home = () => {
   const insuranceCategories = [
+    { 
+      id: 9, 
+      name: 'Premium Calculator', 
+      icon: '🧮', 
+      image: imageUrls.carInsurance,
+      tag: 'Get a quick quote' 
+    },
     { 
       id: 1, 
       name: 'Term Life Insurance', 
@@ -93,7 +101,10 @@ const Home = () => {
               <h3>Best time to buy Health Insurance is now</h3>
               <p>Additional discount up to 25%*</p>
               <p>0%^ GST on health insurance plans</p>
-              <button className="btn-secondary">View plans</button>
+              <div className="hero-cta">
+                <Link to="/calculator" className="btn-primary">Get a Quote</Link>
+                <button className="btn-secondary">View plans</button>
+              </div>
             </div>
           </div>
         </div>
@@ -103,6 +114,22 @@ const Home = () => {
           <h2>Insurance Products</h2>
           <div className="category-grid">
             {insuranceCategories.map((category) => (
+              category.id === 9 ? (
+                <Link to="/calculator" key={category.id} className="category-card" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <div>
+                    <div className="category-image">
+                      <img src={category.image} alt={category.name} />
+                      <div className="category-overlay">
+                        <div className="category-icon">{category.icon}</div>
+                      </div>
+                    </div>
+                    <div className="category-details">
+                      <h3>{category.name}</h3>
+                      <span className="tag">{category.tag}</span>
+                    </div>
+                  </div>
+                </Link>
+              ) : (
               <div key={category.id} className="category-card">
                 <div className="category-image">
                   <img src={category.image} alt={category.name} />
@@ -115,7 +142,8 @@ const Home = () => {
                   <span className="tag">{category.tag}</span>
                 </div>
               </div>
-            ))}
+            ))
+            )}
           </div>
           <button className="btn-outline view-all">View all products</button>
         </section>

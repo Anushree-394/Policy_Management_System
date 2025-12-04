@@ -33,6 +33,11 @@ const Navbar = () => {
           <Link to="/register" className="register-button">
             Register
           </Link>
+          
+          {/* reserved for authenticated user menu — keep hidden for pre-login UI
+          <div className="hidden" data-role="auth-logout" aria-hidden="true">Logout</div>
+          <div className="hidden" data-role="auth-dashboard" aria-hidden="true">My Dashboard</div> */}
+          
           <div className="expert-chat-desktop">
             <ExpertChat />
           </div>
